@@ -3,7 +3,6 @@ import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import { PostHogWrapper } from "@/components/PostHogWrapper";
 import Tag from "@/tag/Tag";
-import ThemeProvider from "@/providers/themeProvider/ThemeProvider";
 
 const ibmPlexSans = IBM_Plex_Sans({
   variable: "--font-ibm-plex-sans",
@@ -54,20 +53,7 @@ export default function RootLayout({
       <PostHogWrapper>
         <body className={`${ibmPlexSans.variable} antialiased`}>
           <Tag />
-          <ThemeProvider
-            defaultButtonVariant="expand-hover"
-            defaultTextAnimation="background-highlight"
-            borderRadius="rounded"
-            contentWidth="medium"
-            sizing="large"
-            background="circleGradient"
-            cardStyle="glass-flat"
-            primaryButtonStyle="shadow"
-            secondaryButtonStyle="glass"
-            showBlurBottom={false}
-          >
-            {children}
-          </ThemeProvider>
+          {children}
         
         <script
           dangerouslySetInnerHTML={{

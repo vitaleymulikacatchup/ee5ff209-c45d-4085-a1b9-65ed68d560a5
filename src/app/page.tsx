@@ -1,5 +1,6 @@
-"use client"
+"use client";
 
+import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import NavbarStyleMinimal from '@/components/navbar/NavbarStyleMinimal';
 import HeroCarouselLogo from '@/components/sections/hero/heroCarouselLogo/HeroCarouselLogo';
 import TextSplitAbout from '@/components/sections/about/TextSplitAbout';
@@ -15,7 +16,18 @@ import { Music, ShoppingBag, Ticket, Users, MessageSquare, HelpCircle, Mail } fr
 
 export default function KaleoPage() {
   return (
-    <>
+    <ThemeProvider
+      defaultButtonVariant="expand-hover"
+      defaultTextAnimation="background-highlight"
+      borderRadius="rounded"
+      contentWidth="medium"
+      sizing="large"
+      background="circleGradient"
+      cardStyle="glass-flat"
+      primaryButtonStyle="shadow"
+      secondaryButtonStyle="glass"
+      showBlurBottom={false}
+    >
       <div id="nav" data-section="nav">
         <NavbarStyleMinimal
           brandName="KALEO"
@@ -438,6 +450,6 @@ export default function KaleoPage() {
           onPrivacyClick={() => console.log('Privacy policy clicked')}
         />
       </div>
-    </>
+    </ThemeProvider>
   );
 }
